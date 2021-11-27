@@ -13,7 +13,7 @@ public class APIBase {
 
   }
 
-  public static Properties commonProp;
+  protected static Properties commonProp;
   public static Properties envProp;
 
   static {
