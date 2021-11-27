@@ -1,0 +1,56 @@
+plugins {
+    id 'java'
+//    id 'checkstyle'
+
+}
+
+group 'QA_Automation'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.codehaus.groovy:groovy-all:3.0.5'
+    implementation 'commons-io:commons-io:2.11.0'
+    implementation 'org.apache.poi:poi:4.1.2'
+    implementation 'org.apache.poi:poi-ooxml:4.1.2'
+    implementation 'com.github.mifmif:generex:1.0.1'
+    implementation('org.testng:testng:7.1.0')
+    implementation 'io.rest-assured:rest-assured:4.4.0'
+    implementation 'org.json:json:20210307'
+    implementation('io.cucumber:cucumber-java:6.11.0')
+    implementation 'io.cucumber:cucumber-core:6.11.0'
+    implementation('io.cucumber:cucumber-testng:6.11.0')
+    implementation 'org.skyscreamer:jsonassert:1.5.0'
+    implementation 'tech.grasshopper:extentreports-cucumber6-adapter:2.8.4'
+
+
+}
+
+//checkstyle {
+//    // assign the latest plugin version explicitly
+//    // default version is very old, likes 5.9
+//    toolVersion = '9.1'
+//    ignoreFailures = false
+//    maxErrors=0;
+////    maxWarnings = 0
+//    }
+//task checkstyle(type: Checkstyle) {
+//    configFile new File(rootDir, "config/checkstyle/checkstyle.xml")
+//    source 'src'
+//    include '**/*.java'
+//    classpath = files()
+//}
+
+
+
+test {
+    useTestNG() {
+        suites 'src/test/resources/testng.xml'
+        useDefaultListeners = true
+    }
+}
