@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-//    id 'checkstyle'
+    id 'checkstyle'
 
 }
 
@@ -39,14 +39,12 @@ dependencies {
 //    maxErrors=0;
 ////    maxWarnings = 0
 //    }
-//task checkstyle(type: Checkstyle) {
-//    configFile new File(rootDir, "config/checkstyle/checkstyle.xml")
-//    source 'src'
-//    include '**/*.java'
-//    classpath = files()
-//}
-
-
+task checkstyle(type: Checkstyle) {
+    configFile new File(rootDir, "config/checkstyle/checkstyle.xml")
+    source 'src'
+    include '**/*.java'
+    classpath = files()
+}
 
 test {
     useTestNG() {
